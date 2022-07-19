@@ -18,23 +18,27 @@ public class ItemInfo {
     }
 
     public String getBarcodesName(String barcodes) {
-
+        for(String item : itemInfos) {
+            if (barcodes == item.get(0)){
+                return item.get(1);
+            }
+        }
 
         return null;
     }
 
     public int getBarcodesQuantity(String barcodes) {
+        for(String iteminfo : itemInfos) {
 
+        }
         return null;
     }
 
     public int getBarodesUnit(String barcodes) {
-        for(String iteminfo : itemInfos) {
-            for(String item : iteminfo){
+        for(String item : itemInfos) {
                 if (barcodes == item.get(0)){
                     return item.get(2);
                 }
-            }
         }
         return null;
     }
