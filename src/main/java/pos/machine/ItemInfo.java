@@ -11,15 +11,34 @@ public class ItemInfo {
         this.price = price;
     }
 
-    public String getBarcode() {
-        return barcode;
+    public String getBarcodesInfo(List<String> barcodes) {
+
+        return null;
     }
 
-    public String getName() {
-        return name;
+    public String getBarcodesName(String barcodesName) {
+
+        return null;
     }
 
-    public int getPrice() {
-        return price;
+    public int getBarcodesQuantity(String barcodesQantity) {
+
+        return null;
     }
+
+    public int getBarodesUnit(String barcodesUnit) {
+
+        return null;
+    }
+
+    public int getBarodesPrice(String barcodesPrice) {
+
+        return null;
+    }
+
+    public int getBarodesTotalPrice(String barcodesTotalPrice) {
+
+        return null;
+    }
+
 }
