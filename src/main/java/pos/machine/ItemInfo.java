@@ -27,13 +27,12 @@ public class ItemInfo {
     public String getBarcodesLine(String barcodes){
         for(String item : itemInfos) {
             if (barcodes == item.get(0)){
-                return String  line = "Name: " + getBarcodesName(barcodes) + ", Quantity: "
+                return String  barcodesLine = "Name: " + getBarcodesName(barcodes) + ", Quantity: "
                         + getBarcodesQuantity(barcodes) + ", Unit Price: " + getBarodesUnit(barcodes)
                         + " (yuan), Subtotal: " + getBarodesPrice(barcodes) + " (yuan)\n";
             }
         }
     }
-
 
     public String getBarcodesName(String barcodes) {
         for(String item : itemInfos) {
