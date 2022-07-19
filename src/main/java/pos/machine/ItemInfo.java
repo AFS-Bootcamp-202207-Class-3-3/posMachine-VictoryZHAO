@@ -13,26 +13,34 @@ public class ItemInfo {
 
     public String getBarcodesInfo(List<String> barcodes) {
 
-        return null;
-    }
-
-    public String getBarcodesName(String barcodesName) {
 
         return null;
     }
 
-    public int getBarcodesQuantity(String barcodesQantity) {
+    public String getBarcodesName(String barcodes) {
+
 
         return null;
     }
 
-    public int getBarodesUnit(String barcodesUnit) {
+    public int getBarcodesQuantity(String barcodes) {
 
         return null;
     }
 
-    public int getBarodesPrice(String barcodesPrice) {
+    public int getBarodesUnit(String barcodes) {
 
+        return null;
+    }
+
+    public int getBarodesPrice(String barcodes) {
+        for(String iteminfo : itemInfos) {
+            for(String item : iteminfo){
+                if (barcodes == item.get(0)){
+                    return item.get(2)*getBarodesUnit(barcodes);
+                }
+            }
+        }
         return null;
     }
 
