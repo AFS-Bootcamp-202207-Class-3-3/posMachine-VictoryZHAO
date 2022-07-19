@@ -11,11 +11,22 @@ public class ItemInfo {
         this.price = price;
     }
 
-    public String getBarcodesInfo(List<String> barcodes) {
-
+    public String getBarcodesAll(List<String> barcodes) {
 
         return null;
     }
+
+    public String getBarcodesLine(String barcodes){
+        ArrayList<String> infoList = new ArrayList<>();
+        for(String item : itemInfos) {
+            if (barcodes == item.get(0)){
+                return String  line = "Name: " + getBarcodesName(barcodes) + ", Quantity: "
+                        + getBarcodesQuantity(barcodes) + ", Unit Price: " + getBarodesUnit(barcodes)
+                        + " (yuan), Subtotal: " + getBarodesPrice(barcodes) + " (yuan)\n";
+            }
+        }
+    }
+
 
     public String getBarcodesName(String barcodes) {
         for(String item : itemInfos) {
@@ -23,7 +34,6 @@ public class ItemInfo {
                 return item.get(1);
             }
         }
-
         return null;
     }
 
@@ -47,7 +57,6 @@ public class ItemInfo {
     }
 
     public int getBarodesPrice(String barcodes) {
-
         return getBarodesUnit(barcodes) * getBarodesQuantity(barcodes);
     }
 
