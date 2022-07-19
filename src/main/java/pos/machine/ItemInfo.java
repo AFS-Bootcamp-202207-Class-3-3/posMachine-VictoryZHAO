@@ -28,10 +28,13 @@ public class ItemInfo {
     }
 
     public int getBarcodesQuantity(String barcodes) {
+        int quantity;
         for(String iteminfo : itemInfos) {
-
+            if (barcodes == item.get(0)){
+                quantity++;
+            }
         }
-        return null;
+        return quantity;
     }
 
     public int getBarodesUnit(String barcodes) {
