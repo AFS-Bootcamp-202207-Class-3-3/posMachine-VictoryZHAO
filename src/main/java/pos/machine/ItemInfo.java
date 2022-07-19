@@ -29,19 +29,19 @@ public class ItemInfo {
     }
 
     public int getBarodesUnit(String barcodes) {
-
-        return null;
-    }
-
-    public int getBarodesPrice(String barcodes) {
         for(String iteminfo : itemInfos) {
             for(String item : iteminfo){
                 if (barcodes == item.get(0)){
-                    return item.get(2)*getBarodesUnit(barcodes);
+                    return item.get(2);
                 }
             }
         }
         return null;
+    }
+
+    public int getBarodesPrice(String barcodes) {
+
+        return getBarodesUnit(barcodes) * getBarodesQuantity(barcodes);
     }
 
     public int getBarodesTotalPrice(String barcodesTotalPrice) {
