@@ -13,15 +13,15 @@ public class PosMachine {
         ArrayList<String> receiptList = new ArrayList<>();
         List<ItemInfo> itemInfos = ItemDataLoader.loadAllItemInfos();
         int totalPrice = 0;
-        receiptList.add("***<store earning no money>Receipt***\n");
+        receiptList.add("***<store earning no money>Receipt***");
         for(ItemInfo iteminfo : itemInfos){
             receiptList.add(getBarcodesLine(barcodesList, iteminfo.getBarcode()));
             totalPrice = totalPrice + getBarodesPrice(barcodesList, iteminfo.getBarcode());
         }
-        receiptList.add("----------------------\n");
-        receiptList.add("Total: " + totalPrice + " (yuan)\n");
+        receiptList.add("----------------------");
+        receiptList.add("Total: " + totalPrice + " (yuan)");
         receiptList.add("**********************");
-        return String.format(String.join("%n",  barcodesList));
+        return String.format(String.join("\n",  receiptList));
     }
 
     public String getBarcodesLine(List<String> barcodesList, String barcodes){
@@ -29,8 +29,8 @@ public class PosMachine {
         for(ItemInfo item : itemInfos) {
             if (barcodes == item.getBarcode()){
                 return "Name: " + getBarcodesName(barcodes) + ", Quantity: "
-                        + getBarcodesQuantity(barcodesList, barcodes) + ", Unit Price: " + getBarodesUnit(barcodes)
-                        + " (yuan), Subtotal: " + getBarodesPrice(barcodesList, barcodes) + " (yuan)\n";
+                        + getBarcodesQuantity(barcodesList, barcodes) + ", Unit price: " + getBarodesUnit(barcodes)
+                        + " (yuan), Subtotal: " + getBarodesPrice(barcodesList, barcodes) + " (yuan)";
             }
         }
         return null;
